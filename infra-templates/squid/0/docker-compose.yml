@@ -1,25 +1,11 @@
-version: '2'
-volumes:
-  squid-etc:
-    external: true
-    driver: rancher-nfs
-  squid-log:
-    external: true
-    driver: rancher-nfs
-  squid-data:
-    external: true
-    driver: rancher-nfs
-services:
-  squid:
-    image: jrevolt/squid
-    stdin_open: true
-    volumes:
-    - squid-etc:/etc/squid
-    - squid-data:/var/cache/squid
-    - squid-log:/var/log/squid
-    tty: true
-    ports:
-    - 3128:3128/tcp
-    labels:
-      io.rancher.container.pull_image: always
-      io.rancher.scheduler.global: 'true'
+squid:
+  image: jrevolt/squid
+  volumes:
+  - squid-etc:/etc/squid
+  - squid-data:/var/cache/squid
+  - squid-log:/var/log/squid
+  ports:
+  - 3128:3128/tcp
+  labels:
+    io.rancher.container.pull_image: always
+    io.rancher.scheduler.global: 'true'

@@ -1,1 +1,5 @@
 name: Squid Proxy Server
+version: 0.0.1
+category: Proxies
+labels:
+  io.rancher.orchestration.supported: 'cattle,mesos,swarm,kubernetes'
