@@ -1,0 +1,6 @@
+version: '2'
+catalog:
+  name: Squid Proxy Server
+services:
+  squid:
+    start_on_create: true
